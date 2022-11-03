@@ -33,7 +33,7 @@ def option(input)
   when '7'
     quit_app
   else
-    puts 'Please enter a number between 1 and 7.'
+    puts 'Not a valid choice'
   end
 end
 
