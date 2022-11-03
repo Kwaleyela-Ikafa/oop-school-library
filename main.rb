@@ -1,7 +1,7 @@
 require './app'
 
 def main
-  app = App.new
+  @app = App.new
 end
 
 def list_of_options
@@ -18,19 +18,19 @@ end
 def option(input)
   case input
   when '1'
-    list_books
+    @app.list_books
   when '2'
-    list_people
+    @app.list_people
   when '3'
-    create_person
+    @app.create_person
   when '4'
-    create_book
+    @app.create_book
   when '5'
-    create_rental
+    @app.create_rental
   when '6'
-    list_rentals
+    @app.list_rentals
   when '7'
-    quit_app
+    @app.quit_app
   else
     puts 'Not a valid choice'
   end
