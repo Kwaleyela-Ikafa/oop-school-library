@@ -114,4 +114,9 @@ class App
       end
     end
   end
+
+  def quit_app
+    puts 'Hope to see you again'
+    exit(true)
+  end
 end

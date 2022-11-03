@@ -30,6 +30,8 @@ def option(input)
     create_rental
   when '6'
     list_rentals
+  when '7'
+    quit_app
   else
     puts 'Please enter a number between 1 and 7.'
   end
