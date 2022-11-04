@@ -41,11 +41,11 @@ class App
 
   def create_student
     puts 'create student'
-    print 'Enter student age'
+    print 'Enter student age: '
     age = gets.chomp.to_i
-    print 'Enter student name'
+    print 'Enter student name: '
     name = gets.chomp
-    print 'Has parents permission [Y/N]'
+    print 'Has parents permission [Y/N]: '
     parent_permission = gets.chomp.downcase
 
     case parent_permission
@@ -84,23 +84,19 @@ class App
   end
 
   def create_rental
-    puts 'Enter the number of a book you want to rent:'
-    @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
-
+    puts 'Enter the number of a book you want to rent from the list: '
+    list_books
     book_id = gets.chomp.to_i
-
-    puts 'Select a person from the list by the number:'
-    @people.each_with_index do |person, index|
-      puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
+    puts 'Book selected'
+    puts 'Select a person from the list by the number: '
+    list_people
     person_id = gets.chomp.to_i
-
+    puts 'Person selected'
     print 'Date: '
-    date = gets.chomp.to_s
-
-    rental = Rental.new(date, @books[book_id], @people[person_id])
-    @rentals << rental
-    puts 'Rental created successfully'
+    date = gets.chomp
+    puts 'Date of renting book is added'
+    @rentals.push(Rental.new(date, @people[person_id - 1], @books[book_id - 1]))
+    puts 'Rental book created successfully'
   end
 
   def list_rentals
@@ -115,8 +111,40 @@ class App
     end
   end
 
-  def quit_app
-    puts 'Hope to see you again'
-    exit(true)
+  def main_menu
+    puts 'Main menu'
+    puts 'Please choose an option by entering a number:
+            1 - List all Books
+            2 - List all People
+            3 - Create a person
+            4 - Create a book
+            5 - Create a rental
+            6 - List all rentals for a given person id
+            7 - Exit Library'
+    puts 'Waiting for Selection...'
+  end
+
+  def menu
+    main_menu
+    selected = gets.chomp.to_i
+    case selected
+    when 1
+      list_books
+    when 2
+      list_people
+    when 3
+      create_person
+    when 4
+      create_book
+    when 5
+      create_rental
+    when 6
+      list_rentals
+    when 7
+      puts 'Hope to see you again'
+      exit
+    else
+      puts 'Not a valid choice'
+    end
   end
 end
