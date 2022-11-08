@@ -19,7 +19,7 @@ module CreateRental
     print 'Date (yyyy-mm-dd): '
     date = gets.chomp.to_s
     puts 'Date of renting book is added'
-    @rentals << Rental.new(date, @people[person_id - 1], @books[book_id - 1])
+    @rentals << Rental.new(date, @books[book_id - 1], @people[person_id - 1])
     puts 'Rental book created successfully'
   end
 end
