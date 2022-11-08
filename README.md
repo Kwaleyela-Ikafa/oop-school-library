@@ -5,7 +5,6 @@
 > Add new books.
 > Save records of who borrowed a given book and when.
 
-
 ## Built With
 
 - Ruby
@@ -48,6 +47,10 @@ In order to run unit tests on the local machine Rspec gem should be installed
 - Twitter: [@K_Ikafa](https://twitter.com/K_Ikafa)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/kwaleyela-musilizo-ikafa/)
 
+👤 **Praises Tula**
+- GitHub: [@praisespjmt](https://github.com/PraisesPJMT)
+- Twitter: [@praisespjmt](https://twitter.com/PraisesPJMT)
+- LinkedIn: [Praises Tula](https://www.linkedin.com/in/praises-tula)
 
 ## 🤝 Contributing
 
